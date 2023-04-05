@@ -26,4 +26,12 @@ public class Desktop extends Machine {
     public void setVersion(int version) {
         this.version = version;
     }
+
+    @Override
+    public String toString() {
+        return "Desktop{" +
+                "buildNumber='" + buildNumber + '\'' +
+                ", version=" + version +
+                '}';
+    }
 }

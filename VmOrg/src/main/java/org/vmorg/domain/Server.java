@@ -47,4 +47,14 @@ public class Server extends Machine {
     public void setAdminTeam(String adminTeam) {
         this.adminTeam = adminTeam;
     }
+
+    @Override
+    public String toString() {
+        return "Server{" +
+                "distributionName='" + distributionName + '\'' +
+                ", majorNumber=" + majorNumber +
+                ", kernelVersion='" + kernelVersion + '\'' +
+                ", adminTeam='" + adminTeam + '\'' +
+                '}';
+    }
 }

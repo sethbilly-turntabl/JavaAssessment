@@ -2,7 +2,7 @@ package org.vmorg.exception;
 
 public class UserNotEntitledException extends Exception{
 
-    UserNotEntitledException(String message) {
-        super(message);
+    public UserNotEntitledException() {
+        super("User Not Entitled To Request Machine creation");
     }
 }

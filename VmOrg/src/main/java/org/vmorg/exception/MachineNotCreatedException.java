@@ -4,7 +4,7 @@ import org.vmorg.domain.Machine;
 
 public class MachineNotCreatedException extends Exception {
 
-    MachineNotCreatedException() {
-
+    public MachineNotCreatedException() {
+        super("An error occurred Machine Build not successful");
     }
 }
