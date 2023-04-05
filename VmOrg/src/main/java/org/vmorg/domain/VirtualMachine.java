@@ -8,6 +8,9 @@ public abstract class VirtualMachine {
     private int ram;
 
     public VirtualMachine(String hostName, int cpus, int hdd, int ram) {
+        if(null == hostName || hostName == ""){
+            throw new IllegalArgumentException("HostName is required to create a machine");
+        }
         this.hostName = hostName;
         this.cpus = cpus;
         this.hdd = hdd;
