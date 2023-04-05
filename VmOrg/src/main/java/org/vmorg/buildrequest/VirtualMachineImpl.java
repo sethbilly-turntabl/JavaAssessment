@@ -2,6 +2,7 @@ package org.vmorg.buildrequest;
 
 import org.vmorg.auth.AuthorisingService;
 import org.vmorg.build.SystemBuildService;
+import org.vmorg.domain.Desktop;
 import org.vmorg.domain.Machine;
 import org.vmorg.exception.MachineNotCreatedException;
 import org.vmorg.exception.UserNotEntitledException;
@@ -23,7 +24,8 @@ public class VirtualMachineImpl implements VirtualMachineRequestor {
         totalFailedBuilds = 0;
     }
     @Override
-    public void createNewRequest(Machine machine) throws UserNotEntitledException, MachineNotCreatedException {
+    public void createNewRequest(Desktop machine) throws UserNotEntitledException, MachineNotCreatedException {
+        Map<String, Integer> userMachines;
         if(!authorisingService.isAuthorised(machine.getRequester())) {
             //user is not entitled, and we do not anything with is just logged
             throw new UserNotEntitledException();
@@ -32,6 +34,13 @@ public class VirtualMachineImpl implements VirtualMachineRequestor {
             ++totalFailedBuilds;
             throw new MachineNotCreatedException();
         }
+        //machine creation successful
+        if(dailyMachinesCreated.containsKey(machine.getRequester())){
+            //userMachines.put(machine.getHostName(), );
+        }else {
+
+
+        dailyMachinesCreated.put(machine.getRequester(), userMachines);
 
     }
 
