@@ -1,12 +1,19 @@
 package org.vmorg.domain;
 
-public abstract class Machine {
+public class Machine {
 
     private String hostName;
     private int cpus;
     private int hdd;
     private int ram;
     private String requester;
+    private String distributionName;
+    private int majorNumber;
+    private String kernelVersion;
+    private String adminTeam;
+    private String buildNumber;
+    private int version;
+    private MachineType machineType;
 
 
     public Machine(String hostName, int cpus, int hdd, int ram, String requester) {

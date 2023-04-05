@@ -24,7 +24,7 @@ public class VirtualMachineImpl implements VirtualMachineRequestor {
         totalFailedBuilds = 0;
     }
     @Override
-    public void createNewRequest(Desktop machine) throws UserNotEntitledException, MachineNotCreatedException {
+    public void createNewRequest(Machine machine) throws UserNotEntitledException, MachineNotCreatedException {
         Map<String, Integer> userMachines;
         if(!authorisingService.isAuthorised(machine.getRequester())) {
             //user is not entitled, and we do not anything with is just logged
