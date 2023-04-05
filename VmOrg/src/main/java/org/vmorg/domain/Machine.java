@@ -1,13 +1,15 @@
 package org.vmorg.domain;
 
-public abstract class VirtualMachine {
+public abstract class Machine {
 
     private String hostName;
     private int cpus;
     private int hdd;
     private int ram;
+    private String requester;
 
-    public VirtualMachine(String hostName, int cpus, int hdd, int ram) {
+
+    public Machine(String hostName, int cpus, int hdd, int ram, String requester) {
         if(null == hostName || hostName == ""){
             throw new IllegalArgumentException("HostName is required to create a machine");
         }
@@ -15,6 +17,7 @@ public abstract class VirtualMachine {
         this.cpus = cpus;
         this.hdd = hdd;
         this.ram = ram;
+        this.requester = requester;
     }
 
     public String getHostName() {
@@ -47,5 +50,13 @@ public abstract class VirtualMachine {
 
     public void setRam(int ram) {
         this.ram = ram;
+    }
+
+    public String getRequester() {
+        return requester;
+    }
+
+    public void setRequester(String requester) {
+        this.requester = requester;
     }
 }

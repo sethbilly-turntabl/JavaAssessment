@@ -1,12 +1,12 @@
 package org.vmorg.domain;
 
-public class Desktop extends VirtualMachine{
+public class Desktop extends Machine {
 
     private String buildNumber;
     private int version;
 
-    public Desktop(String hostName, int cpus, int hdd, int ram, String builderNumber, int version) {
-        super(hostName, cpus, hdd, ram);
+    public Desktop(String hostName, int cpus, int hdd, int ram, String requester,String builderNumber, int version) {
+        super(hostName, cpus, hdd, ram, requester);
         this.buildNumber = builderNumber;
         this.version = version;
     }

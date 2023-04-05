@@ -1,15 +1,15 @@
 package org.vmorg.domain;
 
-public class Server extends VirtualMachine {
+public class Server extends Machine {
 
     private String distributionName;
     private int majorNumber;
     private String kernelVersion;
     private String adminTeam;
 
-    public Server(String hostName, int cpus, int hdd, int ram,
+    public Server(String hostName, int cpus, int hdd, int ram, String requester,
             String distributionName, int majorNumber, String kernelVersion, String adminTeam) {
-        super(hostName, cpus, hdd, ram);
+        super(hostName, cpus, hdd, ram, requester);
         this.distributionName = distributionName;
         this.majorNumber = majorNumber;
         this.kernelVersion = kernelVersion;
